@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+  </head>
+    <style>
+      #clock {
+        width: 500px;
+        height: 650px;
+        /* background: rgb(230, 230, 231); */
+        /* background: -webkit-radial-gradient(circle, white, rgb(53, 51, 196));
+        background: -o-radial-gradient(circle, white, rgb(18, 20, 128));
+        background: -moz-radial-gradient(circle, white, rgb(15, 27, 138));
+        background: radial-gradient(circle, rgb(74, 86, 255), rgb(15, 16, 29)); */
+        border-radius: 50%;
+        margin: auto;
+        position: relative;
+    
+
+        /* background: url("../images//背景.jpg") ; */
+      }
+      #hour {
+        position: absolute;
+        
+        height: 10px;
+        width: 20%;
+       
+        border-radius: 5px;
+        left: 30%;
+        top: calc(50% - 5px);
+        transform: rotate(0deg);
+        transform-origin: right center;
+      }
+      #minute {
+        position: absolute;
+        height: 10px;
+        width: 40%;
+     
+        border-radius: 5px;
+        left: 10%;
+        top: calc(50% - 5px);
+        transform: rotate(0deg);
+        transform-origin: right center;
+      }
+      #second {
+        position: absolute;
+        height: 10px;
+        /* width: 100%; */
+        /* right: 300px; */
+
+        /* vertical-align: middle; */
+        background: greenyellow;
+        /* border-radius: 10px; */
+        left: 150px;
+    
+        top: 320px;
+        bottom: 10px;
+        /* top: calc(50% - 5px); */
+        /* transform: rotate(360deg); */
+        
+        /* transform-origin: right center; */
+        transition: transform 1s;
+        background: radial-gradient(circle at 10px -7px, transparent 8px, currentColor 8px, currentColor 9px, transparent 5px) repeat-x,
+          radial-gradient(circle at 10px 27px, transparent 8px, currentColor 8px, currentColor 9px, transparent 9px) repeat-x;
+        background-size: 20px 20px ;
+        width: 200px;
+        background-position: 10px calc(100% + 16px), 0 calc(100% - 4px);
+
+        animation: waveFlow 1s infinite linear;
+      
+        
+      }
+
+      @keyframes waveFlow {
+        from {
+          background-position-x: -10px, 0;
+        }
+        to {
+          background-position-x: -30px, -20px;
+        }
+      }
+
+      #second img {
+        width: 100px;
+        position: absolute;
+        top: -130px;
+        right: 160px;
+        animation: ghostUpdown 5s infinite alternate;
+        -webkit-animation: ghostUpdown 3s infinite alternate;
+      }
+
+      @keyframes ghostUpdown {
+        from {
+          margin-top: 100px;
+        }
+        to {
+          margin-top: 70px;
+        }
+      }
+      @-webkit-keyframes ghostUpdown {
+        from {
+          margin-top: 100px;
+        }
+        to {
+          margin-top: 80px;
+        }
+      }
+
+      #clock p {
+        position: absolute;
+      }
+
+      #back img {
+        width: 400px;
+        border-radius: 25%;
+        position: absolute;
+        right: 50px;
+
+        top: 140px;
+      }
+
+
+#hour  img{
+  position: absolute;
+  width: 300px;
+  right: 100px;
+top: -145px;
+left: -105px;
+transform: rotate(270deg);
+
+
+}
+
+#minute img{
+width: 30%;
+position: absolute;
+top: -30px;
+right: 130px;
+
+}
+/*  */
+/* html body{
+  background-image: url("./太空背景\ 星.jpg");
+  position: relative;
+  -webkit-box-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: #060222;
+  overflow: hidden;
+  transform: rotate(180deg);
+} */
+
+body {
+  background-image: url("./太空背景\ 星.jpg");
+  
+  position: relative;
+  -webkit-box-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: #060222;
+  overflow: hidden;
+}
+body:before, body:after {
+  
+  content: "";
+  position: absolute;
+  left: 50%;
+  min-width: 300vw;
+        min-height: 300vw;
+        background-color: #fff;
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+body:before {
+  bottom: 15vh;
+  border-radius: 45%;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+body:after {
+  bottom: 12vh;
+  opacity: 0;
+  border-radius: 47%;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, 0) rotateZ(0deg);
+            transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -2%) rotateZ(180deg);
+            transform: translate(-50%, -2%) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, 0%) rotateZ(360deg);
+            transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, 0) rotateZ(0deg);
+            transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -2%) rotateZ(180deg);
+            transform: translate(-50%, -2%) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, 0%) rotateZ(360deg);
+            transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}
+h2 {
+  position: relative;
+  color: #333;
+  z-index: 10;
+  text-align: center;
+  height: 100vh;
+  line-height: 140vh;
+  font-size: 8vw;
+  text-shadow: 3px 3px 2px #999;
+}
+#seconds img{  
+  width: 35%;              
+    padding-bottom: 35%;
+
+  position: relative;
+  right: -160px;
+  top: -120px;
+  opacity:0.8;
+
+}
+
+#sun img{
+  position: relative;
+width:10%;
+top: 295px;
+right: -220px;
+/* opacity:0.7; */
+animation: suns 15s infinite linear;
+}
+@keyframes suns {
+ 0% {transform: rotate( 0deg);
+ }
+
+ 100%{
+  transform: rotate(360deg);
+ }
+}
+
+
+
+
+    </style>
+  
+  <body>
+   
+    
+    <div id="clock">
+    
+      
+      <div id="back"><img src="背景加數字.jpg" /></div>
+       <div id="minute"><img src="地球.png"></div>
+
+      <div id="second"><img src="太空人1.png" />
+       <div id="seconds" > <img src="太空艙.png" /></div>
+      
+      </div>
+      
+      
+      <div id="sun"><img src="太陽.png" /></div>
+      <div id="hour"><img src="火箭.png"/> </div>
+
+      <!-- <div id="day">
+        <p class="Today">
+
+       
+      </p></div> -->
+
+    </div>
+    <script>
+      const hour = document.getElementById("hour");
+      const minute = document.getElementById("minute");
+      const second = document.getElementById("second");
+      let round = 0;
+      const setColock = () => {
+        const now = new Date();
+        const h = now.getHours();
+        const m = now.getMinutes();
+        const s = now.getSeconds();
+        if (s === 0) {
+          round++;
+        }
+        hour.style.transform = `rotate(${h * 30 + 90}deg)`;
+        minute.style.transform = `rotate(${m * 6 + 90}deg)`;
+        second.style.transform = `rotate(${(s + 60 * round) * 6 + 90}deg)`;
+      };
+      setInterval(setColock, 1000);
+      setColock();
+
+
+//       let Today=new Date();
+// 　document.write( Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日");
+
+
+  
+    </script>
+  </body>
+</html>
